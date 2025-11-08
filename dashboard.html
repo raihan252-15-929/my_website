@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard | Rayhan</title>
+
+  <style>
+    /* ===== CSS START ===== */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+    }
+
+    body {
+      background: linear-gradient(135deg, #6a11cb, #2575fc);
+      color: #fff;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    /* Navbar */
+    nav {
+      width: 100%;
+      background: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(10px);
+      padding: 15px 0;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    nav ul {
+      display: flex;
+      justify-content: center;
+      list-style: none;
+      gap: 30px;
+    }
+
+    nav ul li a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 500;
+      padding: 8px 16px;
+      border-radius: 8px;
+      transition: 0.3s;
+    }
+
+    nav ul li a:hover,
+    nav ul li a.active {
+      background: linear-gradient(90deg, #2575fc, #6a11cb);
+      box-shadow: 0 0 10px rgba(37, 117, 252, 0.6);
+    }
+
+    /* Dashboard Section */
+    .dashboard {
+      max-width: 1200px;
+      width: 100%;
+      padding: 40px 20px;
+      animation: fadeIn 0.8s ease-in-out;
+    }
+
+    .dashboard h1 {
+      text-align: center;
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+    }
+
+    .dashboard p {
+      text-align: center;
+      color: #e0e0e0;
+      margin-bottom: 40px;
+    }
+
+    /* Stats Cards */
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 25px;
+      margin-bottom: 50px;
+    }
+
+    .stat-card {
+      background: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(12px);
+      border-radius: 20px;
+      padding: 25px;
+      text-align: center;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .stat-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 12px 25px rgba(0, 0, 0, 0.3);
+    }
+
+    .stat-card h2 {
+      font-size: 2rem;
+      margin-bottom: 8px;
+      color: #ffd166;
+    }
+
+    .stat-card p {
+      font-size: 1rem;
+      color: #ddd;
+    }
+
+    /* Recent Projects Table */
+    .recent {
+      background: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      padding: 25px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+    }
+
+    .recent h2 {
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      color: #fff;
+    }
+
+    th, td {
+      padding: 12px;
+      text-align: left;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    th {
+      color: #ffd166;
+    }
+
+    tr:hover {
+      background: rgba(255, 255, 255, 0.1);
+    }
+
+    /* Quick Links Section */
+    .quick-links {
+      margin-top: 40px;
+      text-align: center;
+    }
+
+    .quick-links h2 {
+      margin-bottom: 20px;
+    }
+
+    .btn-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 15px;
+    }
+
+    .btn {
+      background: linear-gradient(90deg, #2575fc, #6a11cb);
+      color: #fff;
+      text-decoration: none;
+      padding: 12px 25px;
+      border-radius: 25px;
+      font-weight: 500;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25);
+    }
+
+    /* Footer */
+    footer {
+      margin-top: 60px;
+      padding: 20px;
+      text-align: center;
+      background: rgba(255, 255, 255, 0.1);
+      width: 100%;
+    }
+
+    footer p {
+      color: #ddd;
+      font-size: 0.9rem;
+    }
+
+    /* Animation */
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(-15px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (max-width: 600px) {
+      .dashboard h1 {
+        font-size: 2rem;
+      }
+    }
+    /* ===== CSS END ===== */
+  </style>
+</head>
+<body>
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="dashboard.html" class="active">Dashboard</a></li>
+    </ul>
+  </nav>
+
+  <section class="dashboard">
+    <h1>Dashboard Overview</h1>
+    <p>Here’s a quick summary of your work progress, recent projects, and useful links.</p>
+
+    <!-- Stats Section -->
+    <div class="stats-grid">
+      <div class="stat-card">
+        <h2>12</h2>
+        <p>Projects Completed</p>
+      </div>
+      <div class="stat-card">
+        <h2>5</h2>
+        <p>Ongoing Projects</p>
+      </div>
+      <div class="stat-card">
+        <h2>15+</h2>
+        <p>Technologies Learned</p>
+      </div>
+      <div class="stat-card">
+        <h2>4.9★</h2>
+        <p>Client Feedback</p>
+      </div>
+    </div>
+
+    <!-- Recent Projects -->
+    <div class="recent">
+      <h2>Recent Projects</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Project Name</th>
+            <th>Category</th>
+            <th>Status</th>
+            <th>Last Updated</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Portfolio Website</td>
+            <td>Frontend</td>
+            <td>Completed</td>
+            <td>Nov 2025</td>
+          </tr>
+          <tr>
+            <td>Todo App</td>
+            <td>JavaScript</td>
+            <td>Completed</td>
+            <td>Oct 2025</td>
+          </tr>
+          <tr>
+            <td>Weather App</td>
+            <td>API Integration</td>
+            <td>In Progress</td>
+            <td>Nov 2025</td>
+          </tr>
+          <tr>
+            <td>E-commerce Landing</td>
+            <td>Design</td>
+            <td>Planning</td>
+            <td>Upcoming</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Quick Links -->
+    <div class="quick-links">
+      <h2>Quick Access</h2>
+      <div class="btn-container">
+        <a href="projects.html" class="btn">View All Projects</a>
+        <a href="contact.html" class="btn">Contact Me</a>
+        <a href="about.html" class="btn">About Me</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2025 Rayhan — Dashboard built with 💙 using HTML, CSS & JS</p>
+  </footer>
+</body>
+</html>

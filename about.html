@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">    
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me | Rayhan</title>
+
+    <style>
+        /* ===== CSS START ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Poppins", sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #6a11cb, #2575fc);
+            color: #fff;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* Navbar */
+        nav {
+            width: 100%;
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            gap: 30px;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 8px 16px;
+            border-radius: 8px;
+            transition: 0.3s;
+        }
+
+        nav ul li a:hover,
+        nav ul li a.active {
+            background: linear-gradient(90deg, #2575fc, #6a11cb);
+            box-shadow: 0 0 10px rgba(37, 117, 252, 0.6);
+        }
+
+        /* About Section */
+        .about {
+            max-width: 1000px;
+            margin-top: 70px;
+            text-align: center;
+            padding: 20px;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        .about h1 {
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+        }
+
+        .about h3 {
+            color: #ffd166;
+            margin-bottom: 10px;
+        }
+
+        .about-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 40px;
+            margin-top: 30px;
+        }
+
+        .about img {
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            object-fit: cover;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+            border: 4px solid rgba(255, 255, 255, 0.4);
+        }
+
+        .about-text {
+            max-width: 600px;
+            text-align: left;
+        }
+
+        .about-text p {
+            font-size: 1rem;
+            line-height: 1.7;
+            color: #e0e0e0;
+            margin-bottom: 15px;
+        }
+
+        /* Skills Summary */
+        .skills {
+            margin-top: 50px;
+        }
+
+        .skills h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 12px;
+        }
+
+        .tag {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 10px 18px;
+            font-weight: 500;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+            transition: 0.3s;
+        }
+
+        .tag:hover {
+            transform: translateY(-3px);
+            background: linear-gradient(90deg, #2575fc, #6a11cb);
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-block;
+            margin-top: 30px;
+            background: linear-gradient(90deg, #2575fc, #6a11cb);
+            color: #fff;
+            text-decoration: none;
+            padding: 12px 28px;
+            border-radius: 30px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25);
+        }
+
+        /* Footer */
+        footer {
+            margin-top: 60px;
+            padding: 20px;
+            text-align: center;
+            background: rgba(255, 255, 255, 0.1);
+            width: 100%;
+        }
+
+        footer p {
+            color: #ddd;
+            font-size: 0.9rem;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-15px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .about-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            .about-text {
+                text-align: center;
+            }
+        }
+        /* ===== CSS END ===== */
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+             <li><a href="index.html">Home</a></li>
+             <li><a href="about.html" class="active">About</a></li> 
+             <li><a href="projects.html">Projects</a></li>
+             <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section class="about">
+        <h1>About Me</h1>
+        <h3>Hi, I’m Rayhan — A Passionate Web Developer</h3>
+
+        <div class="about-content">
+            <img src="https://via.placeholder.com/250" alt="Rayhan's Photo">
+
+            <div class="about-text">
+                <p>
+                    I’m a self-taught front-end web developer from Bangladesh with a strong passion for building beautiful, interactive, and responsive websites. 
+                    I enjoy transforming ideas into real-world applications that provide seamless user experiences.
+                </p>
+                <p>
+                    I started my web development journey with HTML, CSS, and JavaScript — and I’m continuously learning new technologies like React and Node.js to expand my skill set. 
+                    I believe in clean code, good design, and lifelong learning.
+                </p>
+                <p>
+                    When I’m not coding, I love exploring new tech trends, reading books, and playing strategy-based video games.
+                </p>
+                <a href="#" class="btn">📄 Download My CV</a>
+            </div>
+        </div>
+
+        <div class="skills">
+            <h2>Technical Skills</h2>
+            <div class="skill-tags">
+                <div class="tag">HTML5</div>
+                <div class="tag">CSS3</div>
+                <div class="tag">JavaScript (ES6+)</div>
+                <div class="tag">React (Basics)</div>
+                <div class="tag">Responsive Design</div>
+                <div class="tag">Git & GitHub</div>
+                <div class="tag">Figma to HTML</div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2025 Rayhan — Designed & Coded with 💙</p>
+    </footer>
+</body>
+</html>
